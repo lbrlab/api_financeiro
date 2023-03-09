@@ -25,6 +25,7 @@
     "node-postgres": "^0.6.2",
     "nodemailer": "^6.7.6",
     "nodemon": "^2.0.21",
+    "netlify-lambda": "^1.6.3",
     "pm2": "^5.2.0",
     "qrcode": "^1.5.1",
     "save": "^2.5.0"
