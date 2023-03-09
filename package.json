@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"npm install",
-    "start": "node server.js",
-    "stop": "node server.js"
+    "build": "netlify-lambda  build express",
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -25,9 +24,9 @@
     "node-base64-image": "^2.0.4",
     "node-postgres": "^0.6.2",
     "nodemailer": "^6.7.6",
+    "nodemon": "^2.0.21",
     "pm2": "^5.2.0",
     "qrcode": "^1.5.1",
-    "save": "^2.5.0",
-    "whatsapp-web.js": "^1.18.4"
+    "save": "^2.5.0"
   }
 }

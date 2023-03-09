@@ -4,17 +4,17 @@ const port = app.get('port');
 const https = require('https');
 const http = require('http');
 const fs = require('fs');
-const { Client, Buttons} = require('whatsapp-web.js');
-var QRCode = require('qrcode')
+//const { Client, Buttons} = require('whatsapp-web.js');
+//var QRCode = require('qrcode')
 
-const client = new Client();
-
-
+//const client = new Client();
 
 
 
 
-client.on('qr', (qr) => {
+
+
+/*client.on('qr', (qr) => {
   app.get('/qr', (req, res)=>{
 
    
@@ -70,9 +70,7 @@ const groups = chats
 
 
 
-      /*let button = new Buttons('Button body', [{ body: 'Pagar' }, 'title', 'footer'])
-
-     /*client.sendMessage("120363029209826299@g.us",button)*/
+    
   
       res.send(label)
   
@@ -83,7 +81,7 @@ const groups = chats
 
 
 client.initialize();
-
+*/
 var pathComp= require("express-static");
 app.use('/avatar',pathComp(__dirname+"/uploads",));
 
@@ -97,7 +95,7 @@ const httpServer = http.createServer(app);
 
 
 // RODANDO NOSSA APLICAÇÃO NA PORTA SETADA
-httpServer.listen(8081, '192.168.0.126', () => {
+httpServer.listen(8081, () => {
   console.log('HTTP Server running on port 8081');
 });
 
