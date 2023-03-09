@@ -1,0 +1,46 @@
+{
+    "options":{
+        
+        "insertUser":{
+
+            "path":"/ISAPI/AccessControl/UserInfo/Record?format=json",
+            "method" : "POST",
+            "digestAuth" :"",
+            "headers":{"Content-Type": "application/json"},
+            "content":{
+                "UserInfo":{
+                "employeeNo":"",
+                "deleteUser":"NULL" ,
+                "name":"",
+                "userType":"normal",
+                "Valid":{
+                "enable":true,
+                "beginTime":"",
+                "endTime":"",
+                "timeType":"local"
+                }
+                }
+            
+            }
+        },
+
+        "addPhoto":
+       
+        {
+            "method":"POST",
+            "digestAuth" :"",
+            "timeout": 3000,
+            "options":{"agent":false},
+            "headers":{"Content-Type": "multipart/form-data"},
+            "content":  
+            {"faceLibType":"blackFD",
+            "FDID":"1","FPID":"",
+            "faceURL":""}
+        }
+        
+
+    }
+
+        
+    
+}

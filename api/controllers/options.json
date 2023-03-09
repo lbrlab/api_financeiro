@@ -1,0 +1,83 @@
+{
+    "options":{
+        
+        "insertUser":{
+
+            "path":"/ISAPI/AccessControl/UserInfo/Record?format=json",
+            "method" : "POST",
+            "digestAuth" :"",
+            "headers":{"Content-Type": "application/json"},
+            "content":{
+                "UserInfo":{
+                "employeeNo":"",
+                "deleteUser":"NULL" ,
+                "name":"",
+                "userType":"normal",
+                "Valid":{
+                "enable":true,
+                "beginTime":"",
+                "endTime":"",
+                "timeType":"local"
+                }
+                }
+            
+            }
+        },
+
+        "deleteUser":{
+            "path":"/ISAPI/AccessControl/UserInfo/Delete?format=json",
+            "method" : "PUT",
+            "digestAuth" :"",
+            "headers":{"Content-Type": "application/json"},
+            "content":{
+                "UserInfoDelCond": {
+                    "EmployeeNoList": [
+                        {
+                            "employeeNo": ""
+                        }
+                    ]
+                }
+            }
+        },
+
+        "searchUser":{
+            "path":"/ISAPI/AccessControl/UserInfo/Search?format=json",
+            "method" : "POST",
+            "digestAuth" :"",
+            "headers":{"Content-Type": "application/json"},
+            "content":{
+            "UserInfoSearchCond": {
+                "searchID": "1",
+                "searchResultPosition": 0,
+                "maxResults": 30,
+                "EmployeeNoList": [
+                    {
+                        "employeeNo": ""
+                    }
+                ]
+            }
+        }
+        },
+
+
+        "addPhoto":
+       
+        {
+            "path":"/ISAPI/Intelligent/FDLib/FaceDataRecord?format=json",
+            "method":"POST",
+            "digestAuth" :"",
+            "timeout": 3000,
+            "options":{"agent":false},
+            "headers":{"Content-Type": "multipart/form-data"},
+            "content":  
+            {"faceLibType":"blackFD",
+            "FDID":"1","FPID":"",
+            "faceURL":""}
+        }
+        
+
+    }
+
+        
+    
+}

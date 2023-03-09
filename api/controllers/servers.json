@@ -1,0 +1,9 @@
+{"devices":
+    {
+    "1":{
+    "url":"http://192.168.18.27/ISAPI/Intelligent/FDLib/FaceDataRecord?format=json",
+    "user":"admin", 
+    "pass":"18a80b01c"
+    }
+}
+}

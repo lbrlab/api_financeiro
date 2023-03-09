@@ -1,0 +1,182 @@
+{
+  "routes": [
+    {
+      "name": "local/financeiro/notas",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "select * from vw_status_recebiveis"
+    },
+ 
+    {
+      "name": "local/financeiro/status",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "select * from status "
+    },
+
+     
+    {
+      "name": "local/financeiro/statusnota",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "select * from statusnota where nota = ?"
+    },
+
+    {
+      "name": "local/financeiro/notasmes",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "select * from vw_notas_emitidas_empresas_mes where ano = ?"
+    },
+
+    {
+      "name": "local/financeiro/baixanota",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "replace into statusnota (status, obs, dataPagamento, nota) values(?,?,?,?) "
+    },
+
+    {
+      "name": "local/financeiro/previsaomes",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "select * from vw_previsao_mes"
+    },
+
+    {
+      "name": "local/financeiro/novocredor",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "insert into credores(nome) values(?)"
+    },
+
+    {
+      "name": "local/financeiro/novaconta",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "insert into contas(referencia, valor, dataInicio, dataFim, barcod, recorrente) values(?, ?, ?, ?, ?, ?)"
+    },
+    {
+      "name": "local/financeiro/contashoje",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "select * from vw_contas_todas WHERE vence_hoje = 1"
+    },
+    {
+      "name": "local/financeiro/credores",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "select * from credores"
+    },
+    {
+      "name": "local/financeiro/pagarconta",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "insert into contas_pagas(id, dataPagamento, dataReferencia) values(?, ?, ?)"
+    },
+    {
+      "name": "local/financeiro/contatodas",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "select * fom vw_contas_todas"
+    },
+    {
+      "name": "local/financeiro/contasdata",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "select * from vw_contas_todas WHERE ? between dataInicio and dataFim AND DAY(?) = DAY(dataFim)"
+    },
+    {
+      "name": "local/financeiro/enviocontas",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "insert into envioContas(id, dataEnvio) values(?, curdate())"
+    },
+    {
+      "name": "local/financeiro/semnota",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "insert into semnota(cnpj, valor, dataEmissao) values(?,?,?)"
+    },
+    {
+      "name": "local/financeiro/nota",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "insert into notasemitidas(numero,cnpj, valor, dataEmissao) values(?,?,?,?)"
+    },
+    {
+      "name": "local/financeiro/statussemnota",
+      "type": "mysql",
+      "method": "post",
+      "host": "209.145.58.96",
+      "user": "lbrtelec_adm",
+      "password": "18@80b01c",
+      "db": "financeiro",
+      "query": "insert into statussemnota(nota, status, obs, dataPagamento) values(?,?,?,?)"
+    }
+  ]}
+   
